@@ -1,8 +1,8 @@
 header{
-    background: url("..assets/images/6.jpg");
+    background: url("../images/h4.jpg");
     background-size: cover;
     background-position: center;
-    min-height: 1000px;
+    min-height: 800px;
 }
 
 .col > div{
@@ -28,4 +28,23 @@ h3 {
 .flow-text {
     font-family: 'Roboto Condensed', sans-serif;
     text-transform: uppercase;
+}
+
+ul.a {
+    list-style-type: circle;
+}
+ul.b {
+    list-style-type: square;
+}
+ol.c {
+    list-style-type: upper-roman;
+}
+  
+ol.d {
+    list-style-type: lower-alpha;
+}
+
+li{
+    font-weight: bold;
+    text-size: 20px;
 }
