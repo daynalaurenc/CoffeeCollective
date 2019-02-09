@@ -136,3 +136,157 @@ $(document).ready(function (){
  });
  
  });
+
+ function initMap() {
+    // New map
+    var map = new google.maps.Map(document.getElementById('map'), {
+      center: {lat:38.5816, lng:-121.4944},
+      zoom: 10,
+    // Styles a map in Silver
+      styles: [
+        {
+          "elementType": "geometry",
+          "stylers": [{"color": "#f5f5f5"}]
+        },
+        {
+          "elementType": "labels.icon",
+          "stylers": [{"visibility": "off"}]
+        },
+        {
+          "elementType": "labels.text.fill",
+          "stylers": [{"color": "#616161"}]
+        },
+        {
+          "elementType": "labels.text.stroke",
+          "stylers": [{"color": "#f5f5f5"}]
+        },
+        {
+          "featureType": "administrative.land_parcel",
+          "elementType": "labels.text.fill",
+          "stylers": [{"color": "#bdbdbd"}]
+        },
+        {
+          "featureType": "poi",
+          "elementType": "geometry",
+          "stylers": [{"color": "#eeeeee"}]
+        },
+        {
+          "featureType": "poi",
+          "elementType": "labels.text.fill",
+          "stylers": [{"color": "#757575"}]
+        },
+        {
+          "featureType": "poi.park",
+          "elementType": "geometry",
+          "stylers": [{"color": "#e5e5e5"}]
+        },
+        {
+          "featureType": "poi.park",
+          "elementType": "labels.text.fill",
+          "stylers": [{"color": "#9e9e9e"}]
+        },
+        {
+          "featureType": "road",
+          "elementType": "geometry",
+          "stylers": [{"color": "#ffffff"}]
+        },
+        {
+          "featureType": "road.arterial",
+          "elementType": "labels.text.fill",
+          "stylers": [{"color": "#757575"}]
+        },
+        {
+          "featureType": "road.highway",
+          "elementType": "geometry",
+          "stylers": [{"color": "#dadada"}]
+        },
+        {
+          "featureType": "road.highway",
+          "elementType": "labels.text.fill",
+          "stylers": [{"color": "#616161"}]
+        },
+        {
+          "featureType": "road.local",
+          "elementType": "labels.text.fill",
+          "stylers": [{"color": "#9e9e9e"}]
+        },
+        {
+          "featureType": "transit.line",
+          "elementType": "geometry",
+          "stylers": [{"color": "#e5e5e5"}]
+        },
+        {
+          "featureType": "transit.station",
+          "elementType": "geometry",
+          "stylers": [{"color": "#eeeeee"}]
+        },
+        {
+          "featureType": "water",
+          "elementType": "geometry",
+          "stylers": [{"color": "#c9c9c9"}]
+        },
+        {
+          "featureType": "water",
+          "elementType": "labels.text.fill",
+          "stylers": [{"color": "#9e9e9e"}]
+        }
+      ]
+    });
+    // Listen for click on map
+    google.maps.event.addListener(map, 'click', 
+    function(event){
+    // Add marker
+      addMarker({coords:event.latLng});
+    });
+    var markers = [
+        {
+          coords:{lat:38.5639, lng:-121.4724},
+          content:'<h1>Temple Coffee</h1>'
+        },
+        {
+          coords:{lat:38.5750, lng:-121.4843},
+          content:'<h1>Old Soul Co.</h1>'
+        },
+        {
+          coords:{lat:38.7442, lng:-121.2876}
+        }
+      ];
+  
+      // Loop through markers
+      for(var i = 0; i < markers.length; i++){
+        addMarker(markers[i]);
+      }
+  
+        // Add Marker Function
+        function addMarker(props){
+        //   var image = {
+        //       url: ''
+        //   }
+          var marker = new google.maps.Marker({
+            map:map,
+            position:props.coords,
+            draggable: true,
+            animation: google.maps.Animation.DROP,
+            icon:'images/google-maps-pin-icon-12.jpg'
+          });
+  
+          // Check for custom icon
+          if(props.iconImage){
+            // Set icon image
+            marker.setIcon(props.iconImage);
+          }
+  
+          // Check content
+          if(props.content){
+            var infoWindow = new google.maps.InfoWindow({
+            content: props.content 
+            });
+  
+            marker.addListener('click', function(){
+              infoWindow.open(map, marker);
+            });
+          }
+        }
+
+
+  }
