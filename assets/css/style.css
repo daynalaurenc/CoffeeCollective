@@ -45,6 +45,9 @@ ol.d {
 }
 
 li{
-    font-weight: bold;
-    text-size: 20px;
+    font-size: 20px;
+}
+
+#zips {
+    max-width: 200px;
 }

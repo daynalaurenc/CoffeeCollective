@@ -13,7 +13,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     <!-- Connect to app.js -->
-    <script type="text/javascript" src="assets/javascript/app.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <!-- <script type="text/javascript" src="assets/javascript/app.js"></script> -->
     <title>Coffee Collective</title>
     <!-- blue-grey-text text-darken-4 -->
 </head>
@@ -44,10 +45,20 @@
         </ul>
     </div>
     </nav>
+    <div class="container">
+        
+             
+            <div class="input-field col s12 grey lighten-4">
+                <select id="zips">
+                <option value="" disabled selected>Choose your Zip Code</option>
+                </select>
+             
+            </div>
+            <a class="deep-orange lighten-1 white-text btn" id="button">GO</a>
+            </div>
 </header>
             
-    
-    
+     
 
 
        <!-- <div class="container">
@@ -122,10 +133,9 @@
 <section class="section container" id="input">
     <div class="row">
     <div class="col s12 l4">
-        <h3 class="deep-orange-text text-darken-4">Locations</h3>
+        <h3 class="left-align deep-orange-text text-darken-4">Locations</h3>
         <div class="locations">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at lacus congue, suscipit elit nec, tincidunt orci.</p>
-        <p>Mauris dolor augue, vulputate in pharetra ac, facilisis nec libero. Fusce condimentum gravida urna, vitae scelerisque erat ornare nec.</p>
+        
         </div>
     </div>
     <div class="col s12 l6 offset-l2">
@@ -158,6 +168,111 @@
         <img src="assets/images/orange.jpg" alt="" class="responsive-img">
     </div>
     </div>
+
+ <!-- contact form -->
+ <section class="section container" id="feedback">
+        <div class="row">
+                <h2 class="deep-orange-text text-darken-4">Let us know!</h2>
+          <div class="col s12 l5">
+            <!-- <h2 class="deep-orange-text text-darken-4">Let us know!</h2> -->
+            <form id="my-form">
+                    <div class="form-group my-read-only-form-group">
+                        <!-- <label for="coffee-shop-name">Coffee shop name: </label> -->
+                        <input class="form-control" id="coffee-shop-name" placeholder="coffee shop name">
+                        <!-- <label for="coffee-shop-address">Address: </label> -->
+                        <input class="form-control" id="coffee-shop-address" placeholder="coffee shop address">
+                        <!-- <label for="coffee-shop-zipcode">Zip code: </label> -->
+                        <input class="form-control" id="coffee-shop-zipcode" placeholder="95640">
+                    </div>
+                    <div class="form-group my-form-group">
+                        <label for="reviewers-name">(optional)</label>
+                        <input class="form-control" id="reviewers-name" placeholder="your name">
+                        <label for="reviewers-email">(optional)</label>
+                        <input type="email" class="form-control" id="reviewers-email" placeholder="name@example.com"><br>
+                    </div>
+          </div>
+          <div class="col s12 l5 offset-l2">
+                        <div class="form-group my-form-group">
+                            <!-- <label for="wifi-rating">Wifi: </label> -->
+                            <!-- <select class="form-control" id="wifi-rating" onchange="validateInputs()"> -->
+                            <select class="form-control" id="wifi-rating">
+                            <option>WIFI</option>
+                            <option>1 (minimal)</option>
+                            <option>2 (adequate)</option>
+                            <option>3 (excellent)</option>
+                            </select>
+                        </div>
+                        <div class="form-group my-form-group">
+                            <!-- <label for="power-outlets-rating">Power outlets:</label> -->
+                            <select class="form-control" id="power-outlets-rating">
+                                <option>POWER OUTLETS</option>
+                                <option>1 (minimal)</option>
+                                <option>2 (adequate)</option>
+                                <option>3 (excellent)</option>
+                                </select>
+                        </div>
+                        <div class="form-group my-form-group">
+                            <!-- <label for="food-rating">Food:</label> -->
+                            <select class="form-control" id="food-rating">
+                                <option>FOOD</option>
+                                <option>1 (minimal)</option>
+                                <option>2 (adequate)</option>
+                                <option>3 (excellent)</option>
+                                </select>
+                        </div>
+                        <div class="form-group my-form-group">
+                            <!-- <label for="beverage-alternative-rating">Beverage alternatives:</label> -->
+                            <select class="form-control" id="beverage-alternative-rating">
+                                <option>BEVERAGE VARIETY</option>
+                                <option>1 (minimal)</option>
+                                <option>2 (adequate)</option>
+                                <option>3 (excellent)</option>
+                                </select>
+                        </div>
+                        <div class="form-group my-form-group">
+                            <!-- <label for="meeting-space-rating">Meeting spaces:</label> -->
+                            <select class="form-control" id="meeting-space-rating">
+                                <option>WORK SPACE</option>
+                                <option>1 (minimal)</option>
+                                <option>2 (adequate)</option>
+                                <option>3 (excellent)</option>
+                            </select>
+                        </div>
+                        <div class="form-group my-form-group">
+                            <!-- <label for="parking-rating">Parking:</label> -->
+                            <select class="form-control" id="parking-rating">
+                                <option>PARKING</option>
+                                <option>1 (minimal)</option>
+                                <option>2 (adequate)</option>
+                                <option>3 (excellent)</option>
+                            </select>
+                        </div>
+                        <div class="form-group my-form-group">
+                            <!-- <label for="overal-rating">Overall rating:</label> -->
+                            <select class="form-control" id="overall-rating">
+                                <option>OVERALL RATING</option>
+                                <option>1 (not good)</option>
+                                <option>2 (so so)</option>
+                                <option>3 (not too bad)</option>
+                                <option>4 (pretty good)</option>
+                                <option>5 (outstanding)</option>
+                            </select>
+                        </div>
+                        <div class="input-field center">
+                        <button class="deep-orange darken-4 white-text btn" id="add-review-button">Add review</button>
+                        </div>
+                    </form>
+
+          </div>
+        </div>
+
+        <!-- <form action="#">
+                <p class="range-field">
+                  <input type="range" id="test5" min="0" max="10" />
+                </p>
+              </form>   -->
+  
+      </section>
 
 
 <!-- footer -->
@@ -223,8 +338,9 @@
 
   <!-- footer -->
 
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script type="text/javascript" src="assets/javascript/app.js"></script>
 <script>
 $(document).ready(function(){
     $('.sidenav').sidenav();
