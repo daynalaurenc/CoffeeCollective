@@ -1,0 +1,31 @@
+header{
+    background: url("..assets/images/6.jpg");
+    background-size: cover;
+    background-position: center;
+    min-height: 1000px;
+}
+
+.col > div{
+    background: ffccbc;
+    
+}
+
+.brand-logo {
+    font-family: 'Roboto Condensed', sans-serif;
+    text-transform: uppercase;
+}
+
+h2 {
+    font-family: 'Roboto Condensed', sans-serif;
+    text-transform: uppercase;
+}
+
+h3 {
+    font-family: 'Roboto Condensed', sans-serif;
+    text-transform: uppercase;
+}
+
+.flow-text {
+    font-family: 'Roboto Condensed', sans-serif;
+    text-transform: uppercase;
+}
