@@ -23,9 +23,13 @@
 <header>
     <nav class="nav-wrapper white">
     <div class="container">
+        <ul>
+        <li class="hide-on-med-and-up"><a href="#" id="hamberder" class="tooltipped btn-floating btn-small blue-grey lighten-2" data-position="bottom" data-tooltip="Instagram"> 
+            <i class="fab fa-instagram"></i></a></li>
+        </ul>
         <a href="#" class="brand-logo deep-orange-text text-darken-4">Coffee Collective</a>
         <a href="#" class="sidenav-trigger" data-target="mobile-menu">
-            <i class="material-icons">menu</i>
+            <i class="material-icons"></i>
         </a>
         <ul class="right hide-on-med-and-down">
         <li><a href="#" class="blue-grey-text text-darken-4">About Us</a></li>
@@ -38,54 +42,31 @@
         <li><a href="#" class="tooltipped btn-floating btn-small blue-grey lighten-2" data-position="bottom" data-tooltip="Twitter">
             <i class="fab fa-twitter"></i></a></li>
         </ul>
-        <ul class="sidenav grey lighten-2" id="mobile-menu">
-        <li><a href="#">About Us</a></li>
-        <li><a href="#">Locations</a></li>
-        <li><a href="#">Feedback</a></li>
-        </ul>
     </div>
     </nav>
-    <div class="container">
+    <ul class="sidenav grey lighten-2" id="mobile-menu">
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Locations</a></li>
+            <li><a href="#">Feedback</a></li>
+    </ul>
+
+
+    <div class="container" id="zip-container">
         
              
-            <div class="input-field col s12 grey lighten-4">
+            <div class="input-field col s12 white">
                 <select id="zips">
-                <option value="" disabled selected>Choose your Zip Code</option>
+                <option value="" disabled selected>Select Zip Code</option>
+                
                 </select>
              
             </div>
-            <a class="deep-orange lighten-1 white-text btn" id="button">GO</a>
+            <a class="deep-orange darken-4 white-text btn" id="button">GO</a>
             </div>
 </header>
             
      
 
-
-       <!-- <div class="container">
-        <div class="row">
-          <div class="col s12 l6">
-            <div class="card">
-              <div class="card-image">
-                <img src="assets/images/1.jpg" alt="">
-                <a href="" class="halfway-fab btn-floating pink pulse">
-                  <i class="material-icons">favorite</i>
-                </a>
-              </div>
-              <div class="card-content">
-                <span class="card-title">Search Sacramento, CA</span>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean quis aliquam orci. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
-              </div>
-              <div class="card-action">
-                <a href="">More details</a>
-                <a href="">View Ingredients</a>
-              </div>
-            </div>
-          </div>
-          <div class="col s12 l6">
-             
-              </div>
-        </div>
-      </div> -->
 
 <section class="container section" id="statement">
     <div class="row">
@@ -107,7 +88,7 @@
         <li>WIFI</li>
         <li>WORK SPACE</li>
         <li>AMBIANCE</li>
-        <li>BARISTA VARIETY</li>
+        <li>BEVERAGE VARIETY</li>
         <li>FOOD</li>
         </ul>
     </div>
@@ -162,117 +143,100 @@
 </section>
 
 <!-- parallax -->   
-    <div class="parallax-container">
-    <div class="parallax">
-        <img src="assets/images/orange.jpg" alt="" class="responsive-img">
-    </div>
-    </div>
+<div class="parallax-container">
+<div class="parallax">
+    <img src="assets/images/orange.jpg" alt="" class="responsive-img">
+</div>
+</div>
 
  <!-- contact form -->
- <section class="section container" id="feedback">
-        <div class="row">
-                <h2 class="deep-orange-text text-darken-4">Let us know!</h2>
-          <div class="col s12 l5">
-            <!-- <h2 class="deep-orange-text text-darken-4">Let us know!</h2> -->
-            <form id="my-form">
-                    <div class="form-group my-read-only-form-group">
-                        <!-- <label for="coffee-shop-name">Coffee shop name: </label> -->
-                        <input class="form-control" id="coffee-shop-name" placeholder="coffee shop name">
-                        <!-- <label for="coffee-shop-address">Address: </label> -->
-                        <input class="form-control" id="coffee-shop-address" placeholder="coffee shop address">
-                        <!-- <label for="coffee-shop-zipcode">Zip code: </label> -->
-                        <input class="form-control" id="coffee-shop-zipcode" placeholder="95640">
-                    </div>
-                    <div class="form-group my-form-group">
-                        <label for="reviewers-name">(optional)</label>
-                        <input class="form-control" id="reviewers-name" placeholder="your name">
-                        <label for="reviewers-email">(optional)</label>
-                        <input type="email" class="form-control" id="reviewers-email" placeholder="name@example.com"><br>
-                    </div>
-          </div>
-          <div class="col s12 l5 offset-l2">
-                        <div class="form-group my-form-group">
-                            <!-- <label for="wifi-rating">Wifi: </label> -->
-                            <!-- <select class="form-control" id="wifi-rating" onchange="validateInputs()"> -->
-                            <select class="form-control" id="wifi-rating">
-                            <option>WIFI</option>
-                            <option>1 (minimal)</option>
-                            <option>2 (adequate)</option>
-                            <option>3 (excellent)</option>
-                            </select>
-                        </div>
-                        <div class="form-group my-form-group">
-                            <!-- <label for="power-outlets-rating">Power outlets:</label> -->
-                            <select class="form-control" id="power-outlets-rating">
-                                <option>POWER OUTLETS</option>
-                                <option>1 (minimal)</option>
-                                <option>2 (adequate)</option>
-                                <option>3 (excellent)</option>
-                                </select>
-                        </div>
-                        <div class="form-group my-form-group">
-                            <!-- <label for="food-rating">Food:</label> -->
-                            <select class="form-control" id="food-rating">
-                                <option>FOOD</option>
-                                <option>1 (minimal)</option>
-                                <option>2 (adequate)</option>
-                                <option>3 (excellent)</option>
-                                </select>
-                        </div>
-                        <div class="form-group my-form-group">
-                            <!-- <label for="beverage-alternative-rating">Beverage alternatives:</label> -->
-                            <select class="form-control" id="beverage-alternative-rating">
-                                <option>BEVERAGE VARIETY</option>
-                                <option>1 (minimal)</option>
-                                <option>2 (adequate)</option>
-                                <option>3 (excellent)</option>
-                                </select>
-                        </div>
-                        <div class="form-group my-form-group">
-                            <!-- <label for="meeting-space-rating">Meeting spaces:</label> -->
-                            <select class="form-control" id="meeting-space-rating">
-                                <option>WORK SPACE</option>
-                                <option>1 (minimal)</option>
-                                <option>2 (adequate)</option>
-                                <option>3 (excellent)</option>
-                            </select>
-                        </div>
-                        <div class="form-group my-form-group">
-                            <!-- <label for="parking-rating">Parking:</label> -->
-                            <select class="form-control" id="parking-rating">
-                                <option>PARKING</option>
-                                <option>1 (minimal)</option>
-                                <option>2 (adequate)</option>
-                                <option>3 (excellent)</option>
-                            </select>
-                        </div>
-                        <div class="form-group my-form-group">
-                            <!-- <label for="overal-rating">Overall rating:</label> -->
-                            <select class="form-control" id="overall-rating">
-                                <option>OVERALL RATING</option>
-                                <option>1 (not good)</option>
-                                <option>2 (so so)</option>
-                                <option>3 (not too bad)</option>
-                                <option>4 (pretty good)</option>
-                                <option>5 (outstanding)</option>
-                            </select>
-                        </div>
-                        <div class="input-field center">
-                        <button class="deep-orange darken-4 white-text btn" id="add-review-button">Add review</button>
-                        </div>
-                    </form>
-
-          </div>
+<section class="section container" id="feedback">
+    <div class="row">
+    <h2 class="deep-orange-text text-darken-4">Let us know!</h2>
+    <div class="col s12 l5">
+    <form id="my-form">
+        <div class="form-group my-read-only-form-group">
+            <input class="form-control" id="coffee-shop-name" placeholder="coffee shop name">
+            <input class="form-control" id="coffee-shop-address" placeholder="coffee shop address">
+            <input class="form-control" id="coffee-shop-zipcode" placeholder="95640">
         </div>
+        <div class="form-group my-form-group">
+            <label for="reviewers-name">(optional)</label>
+            <input class="form-control" id="reviewers-name" placeholder="your name">
+            <label for="reviewers-email">(optional)</label>
+            <input type="email" class="form-control" id="reviewers-email" placeholder="name@example.com"><br>
+            </div>
+        </div>
+        <div class="col s12 l5 offset-l2">
+        <div class="form-group my-form-group">
+        <select class="form-control" id="wifi-rating" onchange="validateInputs()">
+        <select class="form-control" id="wifi-rating">
+            <option>WIFI</option>
+            <option>1 - minimal</option>
+            <option>2 - adequate</option>
+            <option>3 - excellent</option>
+        </select>
+        </div>
+        <div class="form-group my-form-group">
+        <select class="form-control" id="power-outlets-rating">
+            <option>POWER OUTLETS</option>
+            <option>1 - minimal</option>
+            <option>2 - adequate</option>
+            <option>3 - excellent</option>
+        </select>
+        </div>
+        <div class="form-group my-form-group">
+        <select class="form-control" id="food-rating">
+            <option>FOOD</option>
+            <option>1 - minimal</option>
+            <option>2 - adequate</option>
+            <option>3 - excellent</option>
+        </select>
+        </div>
+        <div class="form-group my-form-group">
+        <select class="form-control" id="beverage-alternative-rating">
+            <option>BEVERAGE VARIETY</option>
+            <option>1 - minimal</option>
+            <option>2 - adequate</option>
+            <option>3 - excellent</option>
+        </select>
+        </div>
+        <div class="form-group my-form-group">
+        <select class="form-control" id="meeting-space-rating">
+            <option>WORK SPACE</option>
+            <option>1 - minimal</option>
+            <option>2 - adequate</option>
+            <option>3 - excellent</option>
+        </select>
+        </div>
+        <div class="form-group my-form-group">
+        <select class="form-control" id="parking-rating">
+            <option>PARKING</option>
+            <option>1 - minimal</option>
+            <option>2 - adequate</option>
+            <option>3 - excellent</option>
+        </select>
+        </div>
+        <div class="form-group my-form-group">
+        <select class="form-control" id="overall-rating">
+            <option>OVERALL RATING</option>
+            <option>1 - not good</option>
+            <option>2 - so so</option>
+            <option>3 - okay</option>
+            <option>4 - pretty good</option>
+            <option>5 - outstanding</option>
+        </select>
+        </div>
+        <div class="input-field center">
+            <button class="deep-orange darken-4 white-text btn" id="add-review-button">Add review</button>
+        </div>
+    </form>
 
-        <!-- <form action="#">
-                <p class="range-field">
-                  <input type="range" id="test5" min="0" max="10" />
-                </p>
-              </form>   -->
+    </div>
+    </div>
+</section>
+ 
   
-      </section>
-
 
 <!-- footer -->
 <footer class="page-footer grey darken-3">
@@ -280,7 +244,7 @@
     <div class="row">
     <div class="col l6 s12">
     <h5>Coffee Collective</h5>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at lacus congue.</p>
+        <p>Bridging the gap between social and professional meet-ups.</p>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at lacus congue, suscipit elit nec, tincidunt orci.</p>
     </div>
     <div class="col l4 offset-l2 s12">
@@ -294,29 +258,10 @@
     </div>
     </div>
     <div class="footer-copyright grey darken-4">
-    <div class="container center-align">&copy; 2019 Team Name</div>
+    <div class="container center-align">&copy; 2019 DAYNA LAUREN CABRERA, NAI-MUH DENNIS, PETER TAG, NEDA WO</div>
     </div>
 </footer>
     
-<!-- <div class="container grey lighten-2 box valign-wrapper">
-    <h5>Vertical alignment</h5>
-</div>
-
-<div class="container">
-  <p class="truncate">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut nec sem dictum, consectetur ex vitae, feugiat quam. Sed quis sodales urna. Donec tincidunt faucibus diam a ullamcorper.</p>
-</div>
-
-<i class="material-icons grey-text">cloud</i> -->
-
-<!-- <h4>Icons on Buttons</h4>
-<a href="#" class="btn indigo">
-  <span>Send</span>
-  <i class="material-icons right">send</i>
-</a>
-<a href="#" class="btn pink waves-effect waves-light">
-  <span>Email</span>
-  <i class="material-icons left">email</i>
-</a> <br><br> -->
 
 
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDIc0QeHnR3NiLuwk8-wzHTnj-2bATvgyU&callback=initMap"async defer></script>
@@ -325,11 +270,16 @@
 
 <script>
 $(document).ready(function(){
-    $('.sidenav').sidenav();
+    var sidenav = $('.sidenav').sidenav();
+
     $('.materialboxed').materialbox();
     $('.parallax').parallax();
     $('.tabs').tabs();
     $('.tooltipped').tooltip();
+
+    $('#hamberder').on('click', function() {
+        $('.sidenav').sidenav('open');
+    })
   });
 </script>
 </body>
