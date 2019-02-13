@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Import Social Media Icons -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    
     <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
@@ -12,42 +14,22 @@
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-    <!-- Connect to app.js -->
+    <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
-    <title>Coffee Collective</title>
-    <!-- blue-grey-text text-darken-4 -->
+    <title>Coffee Collective</title>   
 </head>
+
 <body>
 
 <header>
+    <!-- Header, Navbar, and SD menu for Mobile -->
+    <!-- Zip Code Dropdown and Button -->
+    <!-- STILL NEEDED: 
+        NEDA - Are you able to change the button? So that instead of Showing more Reviews, it scrolls to the Locations Area?
+        Refer to button, I muted out code that can accomplish this; however, did not want to touch your JS.  -->
     <nav class="nav-wrapper white">
     <div class="container">
-        <!-- <ul>
-        <li class="hide-on-med-and-up"><a href="#" id="hamberder" class="tooltipped btn-floating btn-small blue-grey lighten-2" data-position="bottom" data-tooltip="Instagram"> 
-            <i class="fab fa-instagram"></i></a></li>
-        </ul> -->
-        <!-- <a href="#" class="brand-logo deep-orange-text text-darken-4">Coffee Collective</a>
-        <a href="#" class="sidenav-trigger" data-target="mobile-menu">
-            <i class="material-icons">Menu</i>
-        </a>
-        <ul class="right hide-on-med-and-down">
-        <li><a href="#aboutUs" class="blue-grey-text text-darken-4">About Us</a></li>
-        <li><a href="#" class="blue-grey-text text-darken-4">Locations</a></li>
-        <li><a href="#feedback" class="blue-grey-text text-darken-4">Feedback</a></li>
-        <li><a href="#" class="tooltipped btn-floating btn-small blue-grey lighten-2" data-position="bottom" data-tooltip="Instagram"> 
-            <i class="fab fa-instagram"></i></a></li>
-        <li><a href="#" class="tooltipped btn-floating btn-small blue-grey lighten-2" data-position="bottom" data-tooltip="Facebook">
-            <i class="fab fa-facebook"></i></a></li>
-        <li><a href="#" class="tooltipped btn-floating btn-small blue-grey lighten-2" data-position="bottom" data-tooltip="Twitter">
-            <i class="fab fa-twitter"></i></a></li>
-        </ul>
-    </div>
-    </nav>
-    <ul class="sidenav light-grey lighten-1" id="mobile-menu">
-            <li><a href="#">About Us</a></li>
-            <li><a href="#">Locations</a></li>
-            <li><a href="#">Feedback</a></li>
-    </ul> -->
+ 
  
     <a href="#" class="brand-logo deep-orange-text text-darken-4">COFFEE COLLECTIVE</a>
     <a href="#" class="sidenav-trigger" data-target="mobile-menu">
@@ -73,24 +55,20 @@
     </nav>
 
     <div class="container" id="zip-container">
-        
-             
         <div class="input-field col s12 white">
-            <select id="zips">
-            <option value="" disabled selected>Select Zip Code</option>
-            
-            </select>
-         
+        <select id="zips">
+        <option value="" disabled selected>Select Zip Code</option> 
+        </select>
         </div>
+        <!-- <a href="#input" class="deep-orange darken-4 white-text btn" id="button">GO</a> -->
         <a class="deep-orange darken-4 white-text btn" id="button">GO</a>
-        </div>
+    </div>
 </header>
 
-
-            
+      
      
 
-
+<!-- Mission, Criteria, Feedback COPY Text -->
 <section class="container section scrollspy" id="aboutUs">
     <div class="row">
     <div class="col s12 l12 offset-l1">
@@ -115,9 +93,6 @@
     </div>
     </div>
     <div class="row">
-    <!-- <div class="col s12 l4">
-        <img src="assets/images/3.jpg" alt="" class="responsive-img materialboxed">
-    </div> -->
     <div class="col s12 l12 offset-l1">
     <h2 class="deep-orange-text text-darken-4">Your Feedback!</h2>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at lacus congue, suscipit elit nec, tincidunt orci. Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum unde labore mollitia architecto, tempore cupiditate debitis illum non omnis tenetur nesciunt temporibus ab commodi in magni vero accusamus recusandae aspernatur.</p>
@@ -125,23 +100,35 @@
     </div>
 </section>
         
-<!-- parallax -->
+
+
+<!-- Parallax -->
     <div class="parallax-container">
     <div class="parallax">
         <img src="assets/images/pp.jpg" alt="" class="responsive-img">
     </div>
     </div>
 
+
+<!-- Locations : Addresses in ".locations" -->
+<!-- Tabs : Map and Reviews -->
+<!-- STILL NEEDED: 
+    NEDA - Change "Submit Review link" text to <i class="material-icons">, on-click to Feedback Form area
+    NAI-MUH - Upload custom markers, ensure that map is zoomed in so all markers are visible in each zipcode
+    PETER - on-click needed for Reviews link (in Locations scrolling div) to open "Reviews tab"    -->
+
 <section class="section container" id="input">
     <div class="row">
+<!-- Left side LOCATIONS -->
         <div class="col s12 l5">
             <h2 class="left-align deep-orange-text text-darken-4">Locations</h2>
             <div class="locations" id="locationScroll">
                 <i class="material-icons prefix" id="reviewIcon">message</i>
             </div>
         </div>
+<!-- Right side TABS/MAP/REVIEWS -->
         <div class="col s12 l6 offset-l1">
-    <!-- tabs -->
+<!-- Tabs -->
             <ul class="tabs">
                 <li class="tab col s6">
                     <a href="#map" class="active blue-grey-text text-darken-4">Map</a>
@@ -163,22 +150,24 @@
                             <p>Review 2</p>
                         </div>
                     </div>
-                <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at lacus congue, suscipit elit nec, tincidunt orci.</p>
-                <p>Mauris dolor augue, vulputate in pharetra ac, facilisis nec libero. Fusce condimentum gravida urna, vitae scelerisque erat ornare nec.</p> -->
-            <!-- </div> -->
         </div>
     </div>
     <!-- </div> -->
 </section>
 
-<!-- parallax -->   
+
+<!-- Parallax -->   
 <div class="parallax-container">
 <div class="parallax">
     <img src="assets/images/orange.jpg" alt="" class="responsive-img">
 </div>
 </div>
 
- <!-- contact form -->
+
+
+ <!-- Contact Form -->
+ <!-- STILL NEEDED:
+    PETER - I do not have access to the Firebase, so I have been unable to see if this form is working -->
 <section class="section container scrollspy" id="feedback">
     <div class="row">
     <h2 class="deep-orange-text text-darken-4">Let us know!</h2>
@@ -267,7 +256,7 @@
  
   
 
-<!-- footer -->
+<!-- Footer -->
 <footer class="page-footer grey darken-3">
     <div class="container">
     <div class="row">
@@ -291,15 +280,19 @@
     </div>
 </footer>
 
-
+<!-- Firebase -->
 <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
+<!-- Google Maps API -->
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDIc0QeHnR3NiLuwk8-wzHTnj-2bATvgyU&callback=initMap"async defer></script>
+<!-- Materialize JS -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<!-- Connect Joint Nai-muh and Neda JS, Peter JS -->
 <script type="text/javascript" src="assets/javascript/app.js"></script>
+<script type="text/javascript" src="assets/javascript/app-firebase.js"></script>
 
+<!-- Day's jQuery -->
 <script>
 $(document).ready(function(){
-    // var sidenav = 
     
     $('.sidenav').sidenav();
 
@@ -308,10 +301,7 @@ $(document).ready(function(){
     $('.tabs').tabs();
     $('.tooltipped').tooltip();
     $('.scrollspy').scrollSpy();
-
-    // $('#hamberder').on('click', function() {
-    //     $('.sidenav').sidenav('open');
-    // })
+ 
   });
 </script>
 </body>
