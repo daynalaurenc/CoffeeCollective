@@ -355,7 +355,7 @@ function renderDiv(item, addressObj) {
   //displayCount++;
 
   var makeGrid = $("<div>");
-  makeGrid.addClass("col s12 m7");
+  makeGrid.addClass("col s12");
   $(".locations").append(makeGrid);
 
   var makeCard = $("<div>");
@@ -397,14 +397,14 @@ function renderDiv(item, addressObj) {
   var formLink = $("<a>");
   formLink.attr("href", "#");
   formLink.addClass("write-review");
-  formLink.text("Submit a Review Please!")
+  formLink.text("#reviewIcon")
 
   var showReview = $("<a>");
   showReview.addClass("show-reviews");
   showReview.attr("id", item.pagemap.localbusiness[0].name + "_"+item.pagemap.postaladdress[0].streetaddress)
   showReview.attr("href", "#");
 
-  showReview.text("Display reviews");
+  showReview.text("Reviews");
   makeCardAction.append(formLink, showReview);
   makeDivStacked.append(makeCardAction);
 }

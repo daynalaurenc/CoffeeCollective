@@ -22,18 +22,18 @@
 <header>
     <nav class="nav-wrapper white">
     <div class="container">
-        <ul>
+        <!-- <ul>
         <li class="hide-on-med-and-up"><a href="#" id="hamberder" class="tooltipped btn-floating btn-small blue-grey lighten-2" data-position="bottom" data-tooltip="Instagram"> 
             <i class="fab fa-instagram"></i></a></li>
-        </ul>
-        <a href="#" class="brand-logo deep-orange-text text-darken-4">Coffee Collective</a>
+        </ul> -->
+        <!-- <a href="#" class="brand-logo deep-orange-text text-darken-4">Coffee Collective</a>
         <a href="#" class="sidenav-trigger" data-target="mobile-menu">
-            <i class="material-icons"></i>
+            <i class="material-icons">Menu</i>
         </a>
         <ul class="right hide-on-med-and-down">
         <li><a href="#aboutUs" class="blue-grey-text text-darken-4">About Us</a></li>
-        <!-- <li><a href="#" class="blue-grey-text text-darken-4">Locations</a></li> -->
-        <li><a href="#reviews" class="blue-grey-text text-darken-4">Feedback</a></li>
+        <li><a href="#" class="blue-grey-text text-darken-4">Locations</a></li>
+        <li><a href="#feedback" class="blue-grey-text text-darken-4">Feedback</a></li>
         <li><a href="#" class="tooltipped btn-floating btn-small blue-grey lighten-2" data-position="bottom" data-tooltip="Instagram"> 
             <i class="fab fa-instagram"></i></a></li>
         <li><a href="#" class="tooltipped btn-floating btn-small blue-grey lighten-2" data-position="bottom" data-tooltip="Facebook">
@@ -43,43 +43,68 @@
         </ul>
     </div>
     </nav>
-    <ul class="sidenav grey lighten-2" id="mobile-menu">
+    <ul class="sidenav light-grey lighten-1" id="mobile-menu">
             <li><a href="#">About Us</a></li>
             <li><a href="#">Locations</a></li>
             <li><a href="#">Feedback</a></li>
+    </ul> -->
+ 
+    <a href="#" class="brand-logo deep-orange-text text-darken-4">COFFEE COLLECTIVE</a>
+    <a href="#" class="sidenav-trigger" data-target="mobile-menu">
+        <i class="material-icons blue-grey-text text-darken-4">menu</i>
+    </a>
+    <ul class="right hide-on-med-and-down">
+        <li><a href="#aboutUs" class="blue-grey-text text-darken-4">About Us</a></li>
+        <li><a href="#input" class="blue-grey-text text-darken-4">Locations</a></li>
+        <li><a href="#feedback" class="blue-grey-text text-darken-4">Feedback</a></li>
+        <li><a href="#" class="tooltipped btn-floating btn-small blue-grey lighten-2" data-position="bottom" data-tooltip="Instagram"> 
+            <i class="fab fa-instagram"></i></a></li>
+        <li><a href="#" class="tooltipped btn-floating btn-small blue-grey lighten-2" data-position="bottom" data-tooltip="Facebook">
+            <i class="fab fa-facebook"></i></a></li>
+        <li><a href="#" class="tooltipped btn-floating btn-small blue-grey lighten-2" data-position="bottom" data-tooltip="Twitter">
+            <i class="fab fa-twitter"></i></a></li>
     </ul>
-
+    <ul class="sidenav grey lighten-2" id="mobile-menu">
+        <li><a href="#aboutUs" class="blue-grey-text text-darken-4">About Us</a></li>
+        <li><a href="#map" class="blue-grey-text text-darken-4">Locations</a></li>
+        <li><a href="#feedback" class="blue-grey-text text-darken-4">Feedback</a></li>
+    </ul>
+    </div>
+    </nav>
 
     <div class="container" id="zip-container">
         
              
-            <div class="input-field col s12 white">
-                <select id="zips">
-                <option value="" disabled selected>Select Zip Code</option>
-                
-                </select>
-             
-            </div>
-            <a class="deep-orange darken-4 white-text btn" id="button">GO</a>
-            </div>
+        <div class="input-field col s12 white">
+            <select id="zips">
+            <option value="" disabled selected>Select Zip Code</option>
+            
+            </select>
+         
+        </div>
+        <a class="deep-orange darken-4 white-text btn" id="button">GO</a>
+        </div>
 </header>
+
+
             
      
 
 
-<section class="container section" id="aboutUs">
+<section class="container section scrollspy" id="aboutUs">
     <div class="row">
     <div class="col s12 l12 offset-l1">
-    <h2 class="deep-orange-text text-darken-4">Mission Statement</h2>
+    <h2 class="deep-orange-text text-darken-4">Our Mission,</h2>
         <p>Great coffee and collaborative working environments should never be difficult to find.<br><br><strong>Coffee Collective</strong> has the solution for the student or professional in need of a communal work space. Our app streamlines the process of discovering cafes in Sacramento that empowers individuals to work from any location. Simply select a zip code, and we will connect you with the best local coffee shops</p>
     </div>
     </div>
     <div class="row">
     <div class="col s12 l4 offset-l1 push-l7">
-        <img src="assets/images/o1.jpg" alt="" class="responsive-img materialboxed">
+        <img src="assets/images/o1.jpg" alt="">
+        <!-- class="responsive-img materialboxed -->
     </div>
     <div class="col s12 l6 offset-l1 pull-l5 right-align">
-    <h2 class="deep-orange-text text-darken-4">Criteria</h2>
+    <h2 class="deep-orange-text text-darken-4" id="criteria">Our Focus,</h2>
         <ul>
         <li>WIFI</li>
         <li>WORK SPACE</li>
@@ -94,7 +119,7 @@
         <img src="assets/images/3.jpg" alt="" class="responsive-img materialboxed">
     </div> -->
     <div class="col s12 l12 offset-l1">
-    <h2 class="deep-orange-text text-darken-4">Feedback</h2>
+    <h2 class="deep-orange-text text-darken-4">Your Feedback!</h2>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at lacus congue, suscipit elit nec, tincidunt orci. Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum unde labore mollitia architecto, tempore cupiditate debitis illum non omnis tenetur nesciunt temporibus ab commodi in magni vero accusamus recusandae aspernatur.</p>
     </div>
     </div>
@@ -109,13 +134,13 @@
 
 <section class="section container" id="input">
     <div class="row">
-        <div class="col s12 l4">
-            <h3 class="left-align deep-orange-text text-darken-4">Locations</h3>
+        <div class="col s12 l5">
+            <h2 class="left-align deep-orange-text text-darken-4">Locations</h2>
             <div class="locations" id="locationScroll">
-                
+                <i class="material-icons prefix" id="reviewIcon">message</i>
             </div>
         </div>
-        <div class="col s12 l6 offset-l2">
+        <div class="col s12 l6 offset-l1">
     <!-- tabs -->
             <ul class="tabs">
                 <li class="tab col s6">
@@ -154,7 +179,7 @@
 </div>
 
  <!-- contact form -->
-<section class="section container" id="feedback">
+<section class="section container scrollspy" id="feedback">
     <div class="row">
     <h2 class="deep-orange-text text-darken-4">Let us know!</h2>
     <div class="col s12 l5">
@@ -262,7 +287,7 @@
     </div>
     </div>
     <div class="footer-copyright grey darken-4">
-    <div class="container center-align">&copy; 2019 DAYNA LAUREN CABRERA, NAI-MUH DENNIS, PETER TAG, NEDA WO</div>
+    <div class="container center-align">&copy; 2019 D.L. CABRERA, N. DENNIS, P. TAG, N. WO</div>
     </div>
 </footer>
 
@@ -274,16 +299,19 @@
 
 <script>
 $(document).ready(function(){
-    var sidenav = $('.sidenav').sidenav();
+    // var sidenav = 
+    
+    $('.sidenav').sidenav();
 
-    $('.materialboxed').materialbox();
+    // $('.materialboxed').materialbox();
     $('.parallax').parallax();
     $('.tabs').tabs();
     $('.tooltipped').tooltip();
+    $('.scrollspy').scrollSpy();
 
-    $('#hamberder').on('click', function() {
-        $('.sidenav').sidenav('open');
-    })
+    // $('#hamberder').on('click', function() {
+    //     $('.sidenav').sidenav('open');
+    // })
   });
 </script>
 </body>

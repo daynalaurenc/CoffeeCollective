@@ -70,6 +70,9 @@ ul.dropdown-content.select-dropdown li span {
     header{
       min-height: 500px;
     }
+     img{
+        width: 100%;
+    }
   }
   .section{
     padding-top: 4vw;
@@ -81,14 +84,8 @@ ul.dropdown-content.select-dropdown li span {
   .tabs .tab a:focus, .tabs .tab a:focus.active{
     background: transparent;
   }
-/* .slider-wrapper {
-    width: 500px;
-    height 500px;
-    position: absolute;
-    display: inline-block;
-    top: 50%;
-    left: 50%
-    transform: transform(-50%, -50%);
-} */
-/* 
-overflow-y: scroll; */
+
+#locationScroll {
+    max-height: 300px;
+    overflow-y: scroll;
+}
