@@ -14,7 +14,6 @@
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     <!-- Connect to app.js -->
     <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
-    <!-- <script type="text/javascript" src="assets/javascript/app.js"></script> -->
     <title>Coffee Collective</title>
     <!-- blue-grey-text text-darken-4 -->
 </head>
@@ -32,9 +31,9 @@
             <i class="material-icons"></i>
         </a>
         <ul class="right hide-on-med-and-down">
-        <li><a href="#" class="blue-grey-text text-darken-4">About Us</a></li>
-        <li><a href="#" class="blue-grey-text text-darken-4">Locations</a></li>
-        <li><a href="#" class="blue-grey-text text-darken-4">Feedback</a></li>
+        <li><a href="#aboutUs" class="blue-grey-text text-darken-4">About Us</a></li>
+        <!-- <li><a href="#" class="blue-grey-text text-darken-4">Locations</a></li> -->
+        <li><a href="#reviews" class="blue-grey-text text-darken-4">Feedback</a></li>
         <li><a href="#" class="tooltipped btn-floating btn-small blue-grey lighten-2" data-position="bottom" data-tooltip="Instagram"> 
             <i class="fab fa-instagram"></i></a></li>
         <li><a href="#" class="tooltipped btn-floating btn-small blue-grey lighten-2" data-position="bottom" data-tooltip="Facebook">
@@ -68,14 +67,11 @@
      
 
 
-<section class="container section" id="statement">
+<section class="container section" id="aboutUs">
     <div class="row">
-    <!-- <div class="col s12 l4">
-        <img src="assets/images/o1.jpg" alt="" class="responsive-img materialboxed">
-    </div> -->
     <div class="col s12 l12 offset-l1">
     <h2 class="deep-orange-text text-darken-4">Mission Statement</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at lacus congue, suscipit elit nec, tincidunt orci. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quo hic officiis iure laboriosam laudantium corporis consequuntur nam fuga eius impedit recusandae eum asperiores, eligendi earum quod nobis, adipisci explicabo doloribus?</p>
+        <p>Great coffee and collaborative working environments should never be difficult to find.<br><br><strong>Coffee Collective</strong> has the solution for the student or professional in need of a communal work space. Our app streamlines the process of discovering cafes in Sacramento that empowers individuals to work from any location. Simply select a zip code, and we will connect you with the best local coffee shops</p>
     </div>
     </div>
     <div class="row">
@@ -87,9 +83,9 @@
         <ul>
         <li>WIFI</li>
         <li>WORK SPACE</li>
-        <li>AMBIANCE</li>
         <li>BEVERAGE VARIETY</li>
         <li>FOOD</li>
+        <li>&PARKING</li>
         </ul>
     </div>
     </div>
@@ -113,33 +109,41 @@
 
 <section class="section container" id="input">
     <div class="row">
-    <div class="col s12 l4">
-        <h3 class="left-align deep-orange-text text-darken-4">Locations</h3>
-        <div class="locations">
-        
+        <div class="col s12 l4">
+            <h3 class="left-align deep-orange-text text-darken-4">Locations</h3>
+            <div class="locations" id="locationScroll">
+                
+            </div>
         </div>
-    </div>
-    <div class="col s12 l6 offset-l2">
+        <div class="col s12 l6 offset-l2">
     <!-- tabs -->
-        <ul class="tabs">
-        <li class="tab col s6">
-            <a href="#map" class="active blue-grey-text text-darken-4">Map</a>
-        </li>
-        <li class="tab col s6">
-            <a href="#reviews" class="blue-grey-text text-darken-4">Reviews</a>
-        </li>
-        </ul>
-        <div id='map' class="col s12">
-            <p class="flow-text blue-grey-text text-darken-4">Map</p>
-        </div>
-        <div id="reviews" class="col s12">
-            <p class="flow-text blue-grey-text text-darken-4">Reviews</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at lacus congue, suscipit elit nec, tincidunt orci.</p>
-            <p>Mauris dolor augue, vulputate in pharetra ac, facilisis nec libero. Fusce condimentum gravida urna, vitae scelerisque erat ornare nec.</p>
-        </div>
+            <ul class="tabs">
+                <li class="tab col s6">
+                    <a href="#map" class="active blue-grey-text text-darken-4">Map</a>
+                </li>
+                <li class="tab col s6">
+                    <a href="#reviews" class="blue-grey-text text-darken-4">Reviews</a>
+                </li>
+            </ul>
+            <div id='map' class="col s12">
+                <p class="flow-text blue-grey-text text-darken-4">Map</p>
+            </div>
+            <div id="reviews" class="col s12">
+                <p class="flow-text blue-grey-text text-darken-4">Reviews</p>
+                <div class="form-group my-read-only-form-group" id="review">
+                        <canvas id="bar-chart">
+                        </canvas>
+                        <div id="review-data">
+                            <p>Review 1</p>
+                            <p>Review 2</p>
+                        </div>
+                    </div>
+                <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at lacus congue, suscipit elit nec, tincidunt orci.</p>
+                <p>Mauris dolor augue, vulputate in pharetra ac, facilisis nec libero. Fusce condimentum gravida urna, vitae scelerisque erat ornare nec.</p> -->
+            <!-- </div> -->
         </div>
     </div>
-    </div>
+    <!-- </div> -->
 </section>
 
 <!-- parallax -->   
@@ -169,7 +173,7 @@
         </div>
         <div class="col s12 l5 offset-l2">
         <div class="form-group my-form-group">
-        <select class="form-control" id="wifi-rating" onchange="validateInputs()">
+        <!-- <select class="form-control" id="wifi-rating" onchange="validateInputs()"> -->
         <select class="form-control" id="wifi-rating">
             <option>WIFI</option>
             <option>1 - minimal</option>
@@ -261,9 +265,9 @@
     <div class="container center-align">&copy; 2019 DAYNA LAUREN CABRERA, NAI-MUH DENNIS, PETER TAG, NEDA WO</div>
     </div>
 </footer>
-    
 
 
+<script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDIc0QeHnR3NiLuwk8-wzHTnj-2bATvgyU&callback=initMap"async defer></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 <script type="text/javascript" src="assets/javascript/app.js"></script>

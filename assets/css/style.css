@@ -5,6 +5,10 @@ header{
     min-height: 800px;
 }
 
+.container {
+    width: 80%;
+}
+
 .col > div{
     background: ffccbc;
     
@@ -33,24 +37,15 @@ h3 {
 ul.a {
     list-style-type: circle;
 }
-ul.b {
-    list-style-type: square;
-}
-ol.c {
-    list-style-type: upper-roman;
-}
-  
-ol.d {
-    list-style-type: lower-alpha;
-}
+
 
 li{
     font-size: 20px;
 }
 
-#map {
+#map{
     height:400px;
-    width:100%;
+    widows: 100%;
 }
 
 
@@ -70,6 +65,22 @@ li{
 ul.dropdown-content.select-dropdown li span {
     color: #000; 
 }
+
+@media screen and (max-width: 670px){
+    header{
+      min-height: 500px;
+    }
+  }
+  .section{
+    padding-top: 4vw;
+    padding-bottom: 4vw;
+  }
+  .tabs .indicator{
+    background-color: black;
+  }
+  .tabs .tab a:focus, .tabs .tab a:focus.active{
+    background: transparent;
+  }
 /* .slider-wrapper {
     width: 500px;
     height 500px;
@@ -79,3 +90,5 @@ ul.dropdown-content.select-dropdown li span {
     left: 50%
     transform: transform(-50%, -50%);
 } */
+/* 
+overflow-y: scroll; */
