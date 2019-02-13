@@ -232,7 +232,7 @@ function renderShops(){
 
 console.log(zipToSearch);
 
-var queryURL = "https://www.googleapis.com/customsearch/v1?key=AIzaSyCpUNjFkodz-yXspwmbP55Hbc_XdH49zQU&cx=000232087639553296774:quobpehcgrs&q=coffee&hq=" + zipToSearch + "&start=" + startCount;
+var queryURL = "https://www.googleapis.com/customsearch/v1?key=AIzaSyBqPdf_mEV6S3Q4dL6Y2Rg8EBsH-Oi2RUA&cx=000232087639553296774:quobpehcgrs&q=coffee&hq=" + zipToSearch + "&start=" + startCount;
   $.ajax({
     url: queryURL,
     method: "GET",
@@ -264,7 +264,7 @@ var queryURL = "https://www.googleapis.com/customsearch/v1?key=AIzaSyCpUNjFkodz-
               if (displayCount < 10){
                   //console.log("leo is here")
                   startCount+=10;
-                  queryURL = "https://www.googleapis.com/customsearch/v1?key=AIzaSyCpUNjFkodz-yXspwmbP55Hbc_XdH49zQU&cx=000232087639553296774:quobpehcgrs&q=coffee&hq=" + zipToSearch + "&start=" + startCount;
+                  queryURL = "https://www.googleapis.com/customsearch/v1?key=AIzaSyBqPdf_mEV6S3Q4dL6Y2Rg8EBsH-Oi2RUA&cx=000232087639553296774:quobpehcgrs&q=coffee&hq=" + zipToSearch + "&start=" + startCount;
                   console.log(queryURL);
                   console.log(startCount);
                   renderShops();
@@ -294,7 +294,7 @@ $("#button").on("click", function(){
   $(".card-small").remove();
   displayCount =0;
   startCount+=10;
-  queryURL = "https://www.googleapis.com/customsearch/v1?key=AIzaSyCpUNjFkodz-yXspwmbP55Hbc_XdH49zQU&cx=000232087639553296774:quobpehcgrs&q=coffee&hq=" + zipToSearch + "&start=" + startCount;
+  queryURL = "https://www.googleapis.com/customsearch/v1?key=AIzaSyBqPdf_mEV6S3Q4dL6Y2Rg8EBsH-Oi2RUA&cx=000232087639553296774:quobpehcgrs&q=coffee&hq=" + zipToSearch + "&start=" + startCount;
   console.log("button clicked");
   console.log(startCount);
   console.log(queryURL);
