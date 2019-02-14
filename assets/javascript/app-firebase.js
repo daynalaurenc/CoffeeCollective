@@ -1,13 +1,13 @@
 
   // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyB6gRTOWB-FIaRDTNxJInuXYNP7gkk4Njg",
-    authDomain: "coffee-collective.firebaseapp.com",
-    databaseURL: "https://coffee-collective.firebaseio.com",
-    projectId: "coffee-collective",
-    storageBucket: "",
-    messagingSenderId: "979553096132"
-};
+// var config = {
+//     apiKey: "AIzaSyB6gRTOWB-FIaRDTNxJInuXYNP7gkk4Njg",
+//     authDomain: "coffee-collective.firebaseapp.com",
+//     databaseURL: "https://coffee-collective.firebaseio.com",
+//     projectId: "coffee-collective",
+//     storageBucket: "",
+//     messagingSenderId: "979553096132"
+// };
 var GoogleCustomSearchJSON_API_key = "AIzaSyCKKAaR9MblJ2MBOk7Ek2Wzr0iYZAtCf6Y";
 var coffeeShopListItem = {
     name: '',
@@ -79,12 +79,16 @@ var queryCount;
 var totalQueries;
 var currentCoffeeShop = "";
 
-
-firebase.initializeApp(config);
+// firebase.initializeApp(config);
 var database = firebase.database();
+database.ref().on('value', function(snapshot) {
+    // event.preventDefault();
+    var keys = Object.keys(snapshot.val());
+    console.log('Number of coffee shops in Firebase database='+ keys.length);
+});
 $('#add-review-button').attr("disabled", "disabled");
 initializeReviewFormDropdowns();
-populateCoffeeShopList();
+// populateCoffeeShopList();
 //__________________________________________
 //  FUNCTIONS
 //__________________________________________
@@ -133,15 +137,12 @@ function populateCoffeeShopList() {
         for (i=0;i<uniqueZipCodes.length;i++) {
             $coffeeShopZipCodesList.append($('<option></option>').val(uniqueZipCodes[i]).html(uniqueZipCodes[i]));
         }
-        if (currentCoffeeShop != "") {
-            $("#coffee-shops").val(currentCoffeeShop);
-        } 
-        populateCoffeeShopFields();
+        // alert('Total zip codes=' + uniqueZipCodes.length + ' total shops=' + keys.length);
+        showCoffeeShopInformation($("#coffee-shops").find(":selected").text());
     });
 }
-
 function refreshBarChart(avgRatings, coffeeShopName, coffeeShopAddress) {
-    // alert("Updating chart");
+    alert("Updating chart");
     var chartArea = $('#bar-chart');
     // window.chart = new Chart(chartArea, {});
     var chartData = [];
@@ -186,25 +187,38 @@ function refreshBarChart(avgRatings, coffeeShopName, coffeeShopAddress) {
         }
     });
 }
-
-function populateCoffeeShopFields() {
-    var selectedElement = $("#coffee-shops").find(":selected").text();
-    var components = selectedElement.split('_');
+//  This function gets the coffee shop key from the selected DOM element
+function getCoffeeShopKey(selectedDOMelement) {
+    return selectedDOMelement.attr('id');
+}
+function showCoffeeShopInformation(coffeeShopKey) {
+    // var selectedElement = $("#coffee-shops").find(":selected").text();
+    var selectedElement = coffeeShopKey;
+    var shopName;
+    var shopAddress;
     var shopZipcode;
     // console.log(components);
-    $("#coffee-shop-name").val(components[0]);
-    $("#coffee-shop-address").val(components[1]);
+    // $("#coffee-shop-name").val(components[0]);
+    // $("#coffee-shop-address").val(components[1]);
     var numReviews = 0;
-    database.ref(selectedElement).on("value", function(data) {
-        data.forEach(function(reviewData) {
-            var dataPoint = reviewData.val();
-            console.log('Zip code=' + dataPoint.shopZipcode);
-            shopZipcode = dataPoint.shopZipcode;
+    database.ref(selectedElement).on("value", function(myData) {
+        myData.forEach(function(reviewData) {
+            if (numReviews == 0) {
+                var dataPoint = reviewData.val();
+                console.log('Zip code=' + dataPoint.shopZipcode);
+                shopName = dataPoint.shopName;
+                shopAddress = dataPoint.shopAddress;
+                shopZipcode = dataPoint.shopZipcode;
+                $('#coffee-shop-name').val(dataPoint.shopName)
+                $('#coffee-shop-address').val(shopAddress);    
+            }
             numReviews++;
         });
-        $("#coffee-shop-zipcode").val(shopZipcode);
-        // alert('Zip code=' + thisCoffeShop.shopZipcode);
     });
+    // populate the display-only fields in the Review section of the page
+    // $('#coffee-shop-zipcode').text(shopZipcode);
+    // alert('Zip code=' + thisCoffeShop.shopZipcode);
+
     var $numReviews = $("#reviews-number-value");
     if (numReviews == 1) {
         $("#reviews-number-value").text(numReviews + ' review');
@@ -212,19 +226,11 @@ function populateCoffeeShopFields() {
         $("#reviews-number-value").text(numReviews + ' reviews');
     }
     // $('#bar-chart').empty();
-    $('#reviews').empty();
+    $('#review').empty();
 }
-
-$("#coffee-shops").on('change', function(event) {
-    event.preventDefault();
-    populateCoffeeShopFields();
-});
-$('#get-reviews-button').on('click', function(event) {
-    getCoffeeShopReviews();
-});
 function getCoffeeShopReviews(coffeShopKey) {
     event.preventDefault();
-    $reviews = $('#reviews');
+    $reviews = $('#review');
     $reviews.empty();
     $reviews.append('<canvas id="bar-chart"></canvas>');
     var $coffeeShopName = $('#coffee-shop-name').val();
@@ -340,6 +346,8 @@ function getCoffeeShopReviews(coffeShopKey) {
     for (i=0;i<$reviewDivs.length;i++) {
         $reviews.append($reviewDivs[i]);
     }
+    console.log('Reviews', avgRatings);
+    alert('Refreshing chart for ' + reviews.length + ' reviews');
     refreshBarChart(avgRatings, $coffeeShopName, $coffeeShopAddress);
 }
 $("#hide-show-button").on('click', function() {
@@ -352,6 +360,9 @@ $("#hide-show-button").on('click', function() {
     }
 });
 $("#add-review-button").on('click', function(){
+
+    //currentCoffeeShop = $("#coffee-shops").val();
+
     pushCoffeeShopReviewToDatabase($("#coffee-shop-name").val(),
                                     $("#coffee-shop-address").val(),
                                     $("#coffee-shop-zipcode").val(),
@@ -381,7 +392,6 @@ $("#my-form :input").change(function() {
   });
 
 $('#generate-dummy-data-button').on('click', executeAJAXzipCodeQueries);
-
 function generateDummyData() {
     var reviewerUsername;
     var reviewerEmail;
@@ -510,13 +520,19 @@ function executeAJAXzipCodeQueries(event) {
         }                
     });
 };
+//____________________________
+//  DOM element event handlers
 //________________________________________________
 //  event handlers for writing and reading reviews
 $('.show-reviews').on('click', function() {
     var coffeShopKey = $(this).attr('id');
     alert("Showing reviews for " + coffeShopKey);
+    $([document.documentElement, document.body]).animate({
+        scrollTop: $(".reviews").offset().top
+    }, 2000);
     getCoffeeShopReviews(coffeShopKey);
 });
+
 $('#coffee-shop-zipcode').on('change', function () {
 //  List only coffee shops in this zip code
     var coffeeShopsInZipCode = [];
@@ -540,22 +556,139 @@ $('#coffee-shop-zipcode').on('change', function () {
             $coffeeShopsList.append($('<option></option>').val(coffeeShopsInZipCode[i+1]).html(coffeeShopsInZipCode[i+1]));
         }
     }
-    populateCoffeeShopFields();
+    showCoffeeShopInformation($("#coffee-shops").find(":selected").text());
 });
-$('.write-review').on('click', function(event) {
+//
+//_____________________________________________________________________
+//  event handler for displaying the reviews for a selected coffee shop
+$(document).on('click', '.show-reviews', function() {
+    var coffeShopKey = $(this).attr('id');
+    alert("Showing reviews for " + coffeShopKey);
+    getCoffeeShopReviews(coffeShopKey);
+    // TO-DO: Add code to scroll to the DOM element where the reviews are displayed
+});
+
+$('#show-reviews-button').on('click', function() {
+    var coffeShopKey = $('#coffee-shop-name').val() + '_' + $('#coffee-shop-address').val();
+    $([document.documentElement, document.body]).animate({
+        scrollTop: $(".reviews").offset().top
+    }, 2000);
+    alert("Showing reviews for " + coffeShopKey);
+    getCoffeeShopReviews(coffeShopKey);
+    // TO-DO: Add code to scroll to the DOM element where the reviews are displayed
+});
+//__________________________________________________________________
+//  on-click event handler for when the user wants to write a review
+//  for a particular coffee shop that appeared in the list of coffee
+//  shops displayed for the selected zip code
+$(document).on('click', '.write-review', function(event) {
+    //  build the query key for Firebase using the contents of the ID for the
+    //  DOM element that was clicked
     var coffeeShopKey = $(this).attr('id');
+    $([document.documentElement, document.body]).animate({
+        scrollTop: $("#feedback").offset().top
+    }, 2000);
+    alert('Write a review for coffee shop=' + coffeeShopKey);
+    showCoffeeShopInformation(coffeeShopKey);
     var numReviews = 0;
-    database.ref(coffeeShopKey).on('value', function(data) {
-        data.forEach(function(reviewData) {
-            var dataPoint = reviewData.val();
-            console.log('Zip code=' + dataPoint.shopZipcode);
-            var shopZipcode = dataPoint.shopZipcode;
-            numReviews++;
-            if (numReviews == 1) {
-                $('#coffee-shop-name').text(dataPoint.shopName);
-                $('#coffee-shop-address').text(dataPoint.shopAddress);
-                $('#coffee-shop-zipcode').text(dataPoint.shopZipcode);
-            }
-        });
-    });
+    // database.ref(coffeeShopKey).on('value', function(data) {
+    //     data.forEach(function(reviewData) {
+    //         var dataPoint = reviewData.val();
+    //         console.log('Zip code=' + dataPoint.shopZipcode);
+    //         var shopZipcode = dataPoint.shopZipcode;
+    //         numReviews++;
+    //         if (numReviews == 1) {
+    //             // populate the display-only fields in the Review section of the page
+    //             $('#coffee-shop-name').text(dataPoint.shopName);
+    //             $('#coffee-shop-address').text(dataPoint.shopAddress);
+    //             $('#coffee-shop-zipcode').text(dataPoint.shopZipcode);
+    //         }
+    //     });
+    // });  
 });
+//___________________________________________________________________
+//  Event handler for submitting a completed review for a coffee shop
+$("#add-review-button").on('click', function(){
+    alert('Adding review');
+    pushCoffeeShopReviewToDatabase($("#coffee-shop-name").val(),
+                                    $("#coffee-shop-address").val(),
+                                    $("#coffee-shop-zipcode").val(),
+                                    $("#reviewers-name").val(),
+                                    $("#reviewers-email").val(),
+                                    $("#food-rating").val(),
+                                    $("#parking-rating").val(),
+                                    $("#power-outlets-rating").val(),
+                                    $("#meeting-space-rating").val(),
+                                    $("#wifi-rating").val(),
+                                    $("#beverage-alternative-rating").val(),
+                                    $("#overall-rating").val());
+    // Force dropdown to return to original value
+});
+//_____________________________________________
+//  Event handler for validating user inputs for a coffee shop review
+$('.form-control').on('change', function(event) {
+    // This function does user input validation and checks whether or not the user has
+    //  set a value for each of the required select inputs in the review form
+    var disable=false;
+    if ($('#wifi-rating').prop('selectedIndex')==-1) {
+        disable=True;
+    }
+    if ($('#power-outlets-rating').prop('selectedIndex')==-1) {
+        disable=True;
+    }
+    if ($('#food-rating').prop('selectedIndex')==-1) {
+        disable=True;
+    }
+    if ($('#beverage-alternative-rating').prop('selectedIndex')==-1) {
+        disable=True;
+    }
+    if ($('#meeting-space-rating').prop('selectedIndex')==-1) {
+        disable=True;
+    }
+    if ($('#parking-rating').prop('selectedIndex')==-1) {
+        disable=True;
+    }
+    if ($('#overall-rating').prop('selectedIndex')==-1) {
+        disable=True;
+    }
+    // Following code doesn't work in Materialize
+    // $('#my-form').find('select').each(function(){ 
+    //     $(this).attr('id');
+    //     alert('Selected=' + $(this).prop('selectedIndex'));
+    //     if ($(this).prop('selectedIndex')==-1) {
+    //         disable=true;
+    //     }
+    // });
+    if (disable) {
+        $('#add-review-button').attr("disabled", "disabled");
+    } else {
+        $('#add-review-button').removeAttr("disabled");
+    }
+    console.log('add-review-button state=' + disable);
+  });
+//____________________________________________________________________________________________________
+// TEST CODE SECTION: These event handlers are only used for testing functionality of the web page
+//
+//  Event handler for responding to button to generate dummy customer review data
+$('#generate-dummy-data-button').on('click', executeAJAXzipCodeQueries);
+
+$("#hide-show-button").on('click', function() {
+    if ($('#my-form').is(':visible')) {
+        // alert("Hiding form");
+        $('#my-form').hide();
+    } else {
+        // alert("Showing form");
+        $('#my-form').show();
+    }
+});
+//  This code is effectively the same code used when the user clicks on the "Write a review"
+$("#coffee-shops").on('change', function(event) {
+    event.preventDefault();
+    alert("Coffee shop change");
+    var coffeeShopKey = $("#coffee-shops").find(":selected").text();
+    showCoffeeShopInformation(coffeeShopKey);
+});
+
+
+
+

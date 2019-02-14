@@ -16,7 +16,9 @@
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+
     <title>Coffee Collective</title>   
+
 </head>
 
 <body>
@@ -24,11 +26,9 @@
 <header>
     <!-- Header, Navbar, and SD menu for Mobile -->
     <!-- Zip Code Dropdown and Button -->
-    <!-- STILL NEEDED: 
-        NEDA - Are you able to change the button? So that instead of Showing more Reviews, it scrolls to the Locations Area?
-        Refer to button, I muted out code that can accomplish this; however, did not want to touch your JS.  -->
     <nav class="nav-wrapper white">
     <div class="container">
+
  
  
     <a href="#" class="brand-logo deep-orange-text text-darken-4">COFFEE COLLECTIVE</a>
@@ -39,12 +39,14 @@
         <li><a href="#aboutUs" class="blue-grey-text text-darken-4">About Us</a></li>
         <li><a href="#input" class="blue-grey-text text-darken-4">Locations</a></li>
         <li><a href="#feedback" class="blue-grey-text text-darken-4">Feedback</a></li>
+
         <li><a href="#" class="tooltipped btn-floating btn-small blue-grey lighten-2" data-position="bottom" data-tooltip="Instagram"> 
             <i class="fab fa-instagram"></i></a></li>
         <li><a href="#" class="tooltipped btn-floating btn-small blue-grey lighten-2" data-position="bottom" data-tooltip="Facebook">
             <i class="fab fa-facebook"></i></a></li>
         <li><a href="#" class="tooltipped btn-floating btn-small blue-grey lighten-2" data-position="bottom" data-tooltip="Twitter">
             <i class="fab fa-twitter"></i></a></li>
+
     </ul>
     <ul class="sidenav grey lighten-2" id="mobile-menu">
         <li><a href="#aboutUs" class="blue-grey-text text-darken-4">About Us</a></li>
@@ -60,28 +62,29 @@
         <option value="" disabled selected>Select Zip Code</option> 
         </select>
         </div>
-        <!-- <a href="#input" class="deep-orange darken-4 white-text btn" id="button">GO</a> -->
         <a class="deep-orange darken-4 white-text btn" id="button">GO</a>
     </div>
+
 </header>
 
       
      
 
-<!-- Mission, Criteria, Feedback COPY Text -->
-<!-- STILL NEEDED:
-    NAI-MUH - Please Slack me the text yo have been working on. -->
+<!-- Mission, Criteria, Feedback COPY Text !-->
 <section class="container section scrollspy" id="aboutUs">
     <div class="row">
     <div class="col s12 l12 offset-l1">
+
     <h2 class="deep-orange-text text-darken-4">Our Mission,</h2>
-        <p>Great coffee and collaborative working environments should never be difficult to find.<br><br><strong>Coffee Collective</strong> has the solution for the student or professional in need of a communal work space. Our app streamlines the process of discovering cafes in Sacramento that empowers individuals to work from any location. Simply select a zip code, and we will connect you with the best local coffee shops</p>
+    <p>To connect enthusiasts with great coffee, ambiance, and collaborative work environments!</p>
+    <p>Have you ever spent 20 minutes texting back and forth, trying to narrow down a meeting place? Needing a coffee in hand, but forced to weigh out different factors such as distance, accommodations, and parking? Let us do the leg work for you!</p>
+            
+    <strong>Coffee Collective</strong> has the solution for the student or professional in need of a communal work space. Our app streamlines the process of discovering cafes in Sacramento. Simply select a zip code, and we will connect you with the best local coffee shops</p>
     </div>
     </div>
     <div class="row">
     <div class="col s12 l4 offset-l1 push-l7">
         <img src="assets/images/o1.jpg" alt="">
-        <!-- class="responsive-img materialboxed -->
     </div>
     <div class="col s12 l6 offset-l1 pull-l5 right-align">
     <h2 class="deep-orange-text text-darken-4" id="criteria">Our Focus,</h2>
@@ -97,7 +100,7 @@
     <div class="row">
     <div class="col s12 l12 offset-l1">
     <h2 class="deep-orange-text text-darken-4">Your Feedback!</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at lacus congue, suscipit elit nec, tincidunt orci. Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum unde labore mollitia architecto, tempore cupiditate debitis illum non omnis tenetur nesciunt temporibus ab commodi in magni vero accusamus recusandae aspernatur.</p>
+        <p>Coffee Collective strives to ensure that our content reflects true experiences. Your feedback provides us insight to what you deem 'non-negotiables.' Each review strengthens the Collective [ratings] and allows users a more streamlined list of coffee shops / work spaces in the future.</p>
     </div>
     </div>
 </section>
@@ -114,48 +117,44 @@
 
 <!-- Locations : Addresses in ".locations" -->
 <!-- Tabs : Map and Reviews -->
-<!-- STILL NEEDED: 
-    NEDA - Change "Submit Review link" text to <i class="material-icons">, on-click to Feedback Form area
-    NAI-MUH - Upload custom markers, ensure that map is zoomed in so all markers are visible in each zipcode
-    PETER - on-click needed for Reviews link (in Locations scrolling div) to open "Reviews tab"    -->
-
-<section class="section container" id="input">
-    <div class="row">
-<!-- Left side LOCATIONS -->
-        <div class="col s12 l5">
-            <h2 class="left-align deep-orange-text text-darken-4">Locations</h2>
-            <div class="locations" id="locationScroll">
-                <i class="material-icons prefix" id="reviewIcon">message</i>
+    <section class="section container" id="input">
+        <div class="row">
+    <!-- Left side LOCATIONS -->
+            <div class="col s12 l5">
+                <h2 class="left-align deep-orange-text text-darken-4">Locations</h2>
+                <div class="locations" id="locationScroll">
+                
+                </div>
             </div>
-        </div>
-<!-- Right side TABS/MAP/REVIEWS -->
-        <div class="col s12 l6 offset-l1">
-<!-- Tabs -->
-            <ul class="tabs">
-                <li class="tab col s6">
-                    <a href="#map" class="active blue-grey-text text-darken-4">Map</a>
-                </li>
-                <li class="tab col s6">
-                    <a href="#reviews" class="blue-grey-text text-darken-4">Reviews</a>
-                </li>
-            </ul>
-            <div id='map' class="col s12">
-                <p class="flow-text blue-grey-text text-darken-4">Map</p>
-            </div>
-            <div id="reviews" class="col s12">
-                <p class="flow-text blue-grey-text text-darken-4">Reviews</p>
-                <div class="form-group my-read-only-form-group" id="review">
-                        <canvas id="bar-chart">
-                        </canvas>
-                        <div id="review-data">
-                            <p>Review 1</p>
-                            <p>Review 2</p>
+    <!-- Right side TABS/MAP/REVIEWS -->
+            <div class="col s12 l6 offset-l1">
+    <!-- Tabs -->
+                <ul class="tabs">
+                    <li class="tab col s6">
+                        <a href="#map" class="active blue-grey-text text-darken-4">Map</a>
+                    </li>
+                    <li class="tab col s6">
+                        <a href="#reviews" class="blue-grey-text text-darken-4">Reviews</a>
+                    </li>
+                </ul>
+                <div id='map' class="col s12">
+                    <p class="flow-text blue-grey-text text-darken-4">Map</p>
+                </div>
+                <div id="reviews" class="col s12">
+                    <p class="flow-text blue-grey-text text-darken-4">Reviews</p>
+                    <div class="form-group my-read-only-form-group" id="review">
+                            <canvas id="bar-chart">
+                            </canvas>
+                            <div id="review-data">
+                                <p>Review 1</p>
+                                <p>Review 2</p>
+                            </div>
                         </div>
-                    </div>
+            </div>
         </div>
-    </div>
-    <!-- </div> -->
-</section>
+        <!-- </div> -->
+    </section>
+
 
 
 <!-- Parallax -->   
@@ -168,12 +167,11 @@
 
 
  <!-- Contact Form -->
- <!-- STILL NEEDED:
-    PETER - I do not have access to the Firebase, so I have been unable to see if this form is working -->
 <section class="section container scrollspy" id="feedback">
+
     <div class="row">
-    <h2 class="deep-orange-text text-darken-4">Let us know!</h2>
     <div class="col s12 l5">
+    <h2 class="deep-orange-text text-darken-4">Let us know!</h2>
     <form id="my-form">
         <div class="form-group my-read-only-form-group">
             <input class="form-control" id="coffee-shop-name" placeholder="coffee shop name">
@@ -181,74 +179,94 @@
             <input class="form-control" id="coffee-shop-zipcode" placeholder="95640">
         </div>
         <div class="form-group my-form-group">
-            <label for="reviewers-name">(optional)</label>
+            <label for="reviewers-name" class ="black-text">(optional)</label>
             <input class="form-control" id="reviewers-name" placeholder="your name">
-            <label for="reviewers-email">(optional)</label>
+            <label for="reviewers-email" class ="black-text">(optional)</label>
             <input type="email" class="form-control" id="reviewers-email" placeholder="name@example.com"><br>
             </div>
+
         </div>
         <div class="col s12 l5 offset-l2">
         <div class="form-group my-form-group">
         <!-- <select class="form-control" id="wifi-rating" onchange="validateInputs()"> -->
+        <label for="wifi-rating" class ="black-text">WIFI</label>
         <select class="form-control" id="wifi-rating">
-            <option>WIFI</option>
-            <option>1 - minimal</option>
-            <option>2 - adequate</option>
-            <option>3 - excellent</option>
-        </select>
-        </div>
-        <div class="form-group my-form-group">
-        <select class="form-control" id="power-outlets-rating">
-            <option>POWER OUTLETS</option>
-            <option>1 - minimal</option>
-            <option>2 - adequate</option>
-            <option>3 - excellent</option>
-        </select>
-        </div>
-        <div class="form-group my-form-group">
-        <select class="form-control" id="food-rating">
-            <option>FOOD</option>
-            <option>1 - minimal</option>
-            <option>2 - adequate</option>
-            <option>3 - excellent</option>
-        </select>
-        </div>
-        <div class="form-group my-form-group">
-        <select class="form-control" id="beverage-alternative-rating">
-            <option>BEVERAGE VARIETY</option>
-            <option>1 - minimal</option>
-            <option>2 - adequate</option>
-            <option>3 - excellent</option>
-        </select>
-        </div>
-        <div class="form-group my-form-group">
-        <select class="form-control" id="meeting-space-rating">
-            <option>WORK SPACE</option>
-            <option>1 - minimal</option>
-            <option>2 - adequate</option>
-            <option>3 - excellent</option>
-        </select>
-        </div>
-        <div class="form-group my-form-group">
-        <select class="form-control" id="parking-rating">
-            <option>PARKING</option>
-            <option>1 - minimal</option>
-            <option>2 - adequate</option>
-            <option>3 - excellent</option>
-        </select>
-        </div>
-        <div class="form-group my-form-group">
-        <select class="form-control" id="overall-rating">
-            <option>OVERALL RATING</option>
-            <option>1 - not good</option>
-            <option>2 - so so</option>
+            <option>none</option>
+            <option>1 - bad</option>
+            <option>2 - mediocre</option>
             <option>3 - okay</option>
-            <option>4 - pretty good</option>
+            <option>4 - good</option>
+            <option>5 - outstanding</option>
+        </select>
+        </div>
+
+        <div class="form-group my-form-group">
+        <label for="power-outlets-rating" class ="black-text">POWER OUTLETS</label>
+        <select class="form-control" id="power-outlets-rating">
+            <option>none</option>
+            <option>1 - bad</option>
+            <option>2 - mediocre</option>
+            <option>3 - okay</option>
+            <option>4 - good</option>
+            <option>5 - outstanding</option>
+        </select>
+        </div>
+        <div class="form-group my-form-group">
+        <label for="food-rating" class ="black-text">FOOD</label>
+        <select class="form-control" id="food-rating">
+            <option>none</option>
+            <option>1 - bad</option>
+            <option>2 - mediocre</option>
+            <option>3 - okay</option>
+            <option>4 - good</option>
+            <option>5 - outstanding</option>
+        </select>
+        </div>
+        <div class="form-group my-form-group">
+        <label for="beverage-alternative-rating" class ="black-text">BEVERAGE VARIETY</label>
+        <select class="form-control" id="beverage-alternative-rating">
+            <option>none</option>
+            <option>1 - bad</option>
+            <option>2 - mediocre</option>
+            <option>3 - okay</option>
+            <option>4 - good</option>
+            <option>5 - outstanding</option>
+        </select>
+        </div>
+        <div class="form-group my-form-group">
+        <label for="meeting-space-rating" class ="black-text">WORKING SPACE</label>
+        <select class="form-control" id="meeting-space-rating">
+            <option>none</option>
+            <option>1 - bad</option>
+            <option>2 - mediocre</option>
+            <option>3 - okay</option>
+            <option>4 - good</option>
+            <option>5 - outstanding</option>
+        </select>
+        </div>
+        <div class="form-group my-form-group">
+        <label for="parking-rating" class ="black-text">PARKING</label>
+        <select class="form-control" id="parking-rating">
+            <option>none</option>
+            <option>1 - bad</option>
+            <option>2 - mediocre</option>
+            <option>3 - okay</option>
+            <option>4 - good</option>
+            <option>5 - outstanding</option>
+        </select>
+        </div>
+        <div class="form-group my-form-group">
+        <label for="overall-rating" class ="black-text">OVERALL</label>
+        <select class="form-control" id="overall-rating">
+            <option>1 - bad</option>
+            <option>2 - mediocre</option>
+            <option>3 - okay</option>
+            <option>4 - good</option>
             <option>5 - outstanding</option>
         </select>
         </div>
         <div class="input-field center">
-            <button class="deep-orange darken-4 white-text btn" id="add-review-button">Add review</button>
+            <button class="deep-orange darken-4 btn" id="add-review-button">Add review</button>
         </div>
     </form>
 
@@ -264,8 +282,10 @@
     <div class="row">
     <div class="col l6 s12">
     <h5>Coffee Collective</h5>
-        <p>Bridging the gap between social and professional meet-ups.</p>
-        <p>Lorem ipsum dolor sitWe need way way cooler text here congue, suscipit elit nec, tincidunt orci.</p>
+        <p>Bridging the gap between social and professional meet-ups. A Collective mixer is hosted every 4th Friday, rotating locations are announced via email.</p>
+
+        <p>Tag #CoffeeCollective on all major social platforms.</p>
+
     </div>
     <div class="col l4 offset-l2 s12">
     <h5 class="white-text">Connect</h5>
@@ -278,33 +298,39 @@
     </div>
     </div>
     <div class="footer-copyright grey darken-4">
+
     <div class="container center-align">&copy; 2019 D.L. CABRERA, N. DENNIS, P. TAG, N. WO</div>
     </div>
 </footer>
-
+<!-- JQuery -->
+<script src="https://code.jquery.com/jquery.js"></script>
 <!-- Firebase -->
 <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
 <!-- Google Maps API -->
+
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDIc0QeHnR3NiLuwk8-wzHTnj-2bATvgyU&callback=initMap"async defer></script>
 <!-- Materialize JS -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<!-- Chart.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>    
 <!-- Connect Joint Nai-muh and Neda JS, Peter JS -->
-<script type="text/javascript" src="assets/javascript/app.js"></script>
-<script type="text/javascript" src="assets/javascript/app-firebase.js"></script>
+<script type="text/javascript" src="assets/javascript/logic.js"></script>
 
+<script type="text/javascript" src="assets/javascript/app-firebase.js"></script>
 <!-- Day's jQuery -->
 <script>
 $(document).ready(function(){
+
     
     $('.sidenav').sidenav();
-
-    // $('.materialboxed').materialbox();
     $('.parallax').parallax();
     $('.tabs').tabs();
     $('.tooltipped').tooltip();
     $('.scrollspy').scrollSpy();
  
+
   });
 </script>
+
 </body>
 </html>
