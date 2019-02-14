@@ -1,5 +1,4 @@
-
-  // Initialize Firebase
+// Initialize Firebase
 // var config = {
 //     apiKey: "AIzaSyB6gRTOWB-FIaRDTNxJInuXYNP7gkk4Njg",
 //     authDomain: "coffee-collective.firebaseapp.com",

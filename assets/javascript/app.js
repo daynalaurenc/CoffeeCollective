@@ -244,7 +244,7 @@ function renderShops(){
 
 console.log(zipToSearch);
 
-var queryURL = "https://www.googleapis.com/customsearch/v1?key=AIzaSyCw2cie1LwqmgFyan6V5PXnbkkjRUUjwG8 &cx=000232087639553296774:quobpehcgrs&q=coffee&hq=" + zipToSearch + "&start=" + startCount;
+var queryURL = "https://www.googleapis.com/customsearch/v1?key=AIzaSyANJx0GShdTBdZ_JqCDWJGoCbEIH-c5RvA&cx=000232087639553296774:quobpehcgrs&q=coffee&hq=" + zipToSearch + "&start=" + startCount;
 //var queryURL = "https://www.googleapis.com/customsearch/v1?key=AIzaSyCzWcFRZ96DbvJn7-Mkf0qkFmnPUIcn5gY&cx=000232087639553296774:quobpehcgrs&q=coffee&hq=" + zipToSearch + "&start=" + startCount;
 
   $.ajax({
@@ -278,7 +278,7 @@ var queryURL = "https://www.googleapis.com/customsearch/v1?key=AIzaSyCw2cie1Lwqm
               if (displayCount < 10){
                   //console.log("leo is here")
                   startCount+=10;
-                  queryURL = "https://www.googleapis.com/customsearch/v1?key=AIzaSyCw2cie1LwqmgFyan6V5PXnbkkjRUUjwG8 &cx=000232087639553296774:quobpehcgrs&q=coffee&hq=" + zipToSearch + "&start=" + startCount;
+                  queryURL = "https://www.googleapis.com/customsearch/v1?key=AIzaSyANJx0GShdTBdZ_JqCDWJGoCbEIH-c5RvA&cx=000232087639553296774:quobpehcgrs&q=coffee&hq=" + zipToSearch + "&start=" + startCount;
                   //queryURL = "https://www.googleapis.com/customsearch/v1?key=AIzaSyCzWcFRZ96DbvJn7-Mkf0qkFmnPUIcn5gY&cx=000232087639553296774:quobpehcgrs&q=coffee&hq=" + zipToSearch + "&start=" + startCount;
                   console.log(queryURL);
                   console.log(startCount);
